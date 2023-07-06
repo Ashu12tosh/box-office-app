@@ -1,22 +1,21 @@
 import { useState } from 'react';
 const Home = () => {
-  const [inputValue, setInputValue] = useState('');
-  console.log(inputValue);
-  const onInputChange = ev => {
-    setInputValue(ev.target.value);
+  const [searchStr, setsearchStr] = useState('');
+
+  const onSearchInputChange = ev => {
+    setsearchStr(ev.target.value);
   };
+const onSearch = (ev) => {
+
+}
+
+
   return (
     <div>
-      <div>{inputValue}</div>
-      <button
-        type="button"
-        onClick={() => {
-          setInputValue('ashu');
-        }}
-      >
-        update to random
-      </button>
-      <input type="text" value={inputValue} onChange={onInputChange} />
+      < form onSubmit={onSearch} >
+      <input type="text" value={searchStr} onChange={onSearchInputChange} />
+      <button type="button">update to random</button>
+      </form>
     </div>
   );
 };
