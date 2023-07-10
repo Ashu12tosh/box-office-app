@@ -8,8 +8,13 @@ const Home = () => {
   const onSearch = async (ev) => {
     ev.preventDefault();
 
-   const response = await fetch(`https://api.tvmaze.com/search/shows?q=$(searchStr)`);
-   const body = await response.json();
+   // searchForShows(`/search/shows?q=${searchStr}`)
+
+
+  const body =  apiGet(`/search/shows?q=${searchStr}`)
+
+   // const response = await fetch(`https://api.tvmaze.com/search/shows?q=${searchStr}`);
+  // const body = await response.json();
 console.log(body);
 
     
